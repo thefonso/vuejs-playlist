@@ -2,7 +2,7 @@
   <div id="show-blogs">
     <h1>All Blog Articles</h1>
     <div v-for="blog in blogs" class="single-blog">
-      <h2>{{blog.title}}</h2>
+      <h2 v-rainbow>{{blog.title}}</h2>
       <article>{{blog.body}}</article>
     </div>
   </div>
@@ -38,6 +38,6 @@
     padding: 20px;
     margin: 20px 0;
     box-sizing: border-box;
-    background: #eee;
+    background: gainsboro;
   }
 </style>
