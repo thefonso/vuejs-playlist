@@ -1,24 +1,11 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>VueJS Tutorials</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="https://unpkg.com/vue"></script>
-</head>
-<body>
-  <div id="vue-app">
-    <h1>Conditionals</h1>
-    <button @click="error = !error">Toggle Error</button>
-    <button @click="success = !success">Toggle Success</button>
-    <p v-show="error">Ooops Error</p>
-    <p v-show="success">Weee success</p>
-    <!--NOTE: v-show just adds "display: none"-->
-  </div>
-
-  <script src="app.js"></script>
-</body>
+  <head>
+    <meta charset="utf-8">
+    <title>vuejs-playlist</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script src="/dist/build.js"></script>
+  </body>
 </html>
