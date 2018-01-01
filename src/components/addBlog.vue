@@ -3,14 +3,14 @@
     <h2>Add a New Blog Post</h2>
     <form action="">
       <label for="">Blog Title:</label>
-      <input type="text" required v-model="blog.title">
+      <input type="text" required v-model.lazy="blog.title">
       <label for="">Blog Content:</label>
-      <textarea name="" id="" cols="30" rows="10" v-model="blog.content"></textarea>
+      <textarea name="" id="" cols="30" rows="10" v-model.lazy="blog.content"></textarea>
     </form>
     <div id="preview">
       <h3>Preview Blog</h3>
-      <p>Blog Title: {{title}}</p>
-      <p>Blog Content: {{content}}</p>
+      <p>Blog Title: {{blog.title}}</p>
+      <p>Blog Content: {{blog.content}}</p>
     </div>
   </div>
 </template>
@@ -21,7 +21,10 @@
 
     data () {
       return {
-
+        blog:{
+          title:"",
+          content:""
+        }
       }
     },
     methods: {
