@@ -14,7 +14,7 @@
       }
     },
     created(){
-      this.$http.get('http://jsonplaceholder.typicode.com/posts/' + this.id).then(function(data){
+      this.$http.get('https://uf-vue-playlist.firebaseio.com/posts.json/' + this.id).then(function(data){
         console.log(data);
         this.blog = data.body;
       });
