@@ -4,7 +4,7 @@
     <input type="text" v-model="search" placeholder="search blogs"/>
     <div v-for="blog in filteredBlogs" class="single-blog">
       <router-link v-bind:to="'/blog/' + blog.id"><h2 v-rainbow>{{blog.title | to-uppercase}}</h2></router-link>
-      <article>{{blog.body | snippet}}</article>
+      <article>{{blog.content | snippet}}</article>
     </div>
   </div>
 </template>
@@ -25,8 +25,15 @@
     },
     created(){
       this.$http.get('https://uf-vue-playlist.firebaseio.com/posts.json/').then(function(data){
-        this.blogs = data.body.slice(0,10);
-      })
+        return data.json();
+      }).then(function(data){
+        var blogsArray = [];
+        for (let key in data){
+          data[key].id = key;
+          blogsArray.push(data[key]);
+        }
+        this.blogs = blogsArray;
+      });
     },
     computed:{
 
